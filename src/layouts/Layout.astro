@@ -15,7 +15,10 @@ const {
   noindex = false,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const normalizedPathname = Astro.url.pathname.replace(/\/index\.html$/, '/');
+const canonicalURL = new URL(normalizedPathname || '/', Astro.site);
+canonicalURL.search = '';
+canonicalURL.hash = '';
 const siteName = 'pipelinedrepair.com';
 const ogImage = image;
 ---
