@@ -3,79 +3,373 @@ import Layout from '../layouts/Layout.astro';
 
 const IMAGE =
   'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/b9c8fe8e-bbb8-40b7-3ddf-6fb7ca8a9800/public';
+const EMAIL = 'sales@desertrich.com';
+const DOMAIN = 'pipelinedrepair.com';
+
+const facts = [
+  ['18', 'characters'],
+  ['2', 'dictionary words'],
+  ['.com', 'commercial TLD'],
+  ['Exact', 'category match'],
+];
+
+const pillars = [
+  ['Exact intent', 'Searchers have a broken line. The name meets them in their own words.'],
+  ['No hyphen tax', 'Two dictionary words. Nothing to defend on a phone call or a bid form.'],
+  ['Brand or hold', 'Run it as the company, or hold it as an investment domain in the trade.'],
+];
+
+const fit = [
+  ['CIPP contractors', 'Cured-in-place lining crews that want the category phrase on the truck, the bid, and the domain.'],
+  ['Trenchless rehab', 'Firms that repair lines without opening the street. The name already says the work.'],
+  ['Municipal vendors', 'Sewer programs and the companies that hold their contracts. A .com a city clerk can spell.'],
+  ['Infrastructure groups', 'A roll-up or regional brand that would rather own the exact term than rent it in ads.'],
+];
+
+const steps = [
+  ['01', 'Write the offer', 'Name, email, a number if you have one, and how you would use the domain. The desk is sales@desertrich.com.'],
+  ['02', 'Agree in writing', 'Price stays private until you put one forward. Use Escrow.com or your counsel if you want a third party to hold funds. This site is not the escrow.'],
+  ['03', 'Take the name', 'Registrar push or auth-code transfer. You point DNS. The included mark can travel with the name or be replaced.'],
+];
+
+const faq = [
+  ['Is this a domain marketplace?', 'No. There is one asset: pipelinedrepair.com. It is a direct acquisition, not a catalog of premium domain names, expired domains, or unrelated inventory.'],
+  ['What does it cost to buy this .com?', 'The price is a private offer. It is not printed here, and there is no card checkout. Send a written number. Serious inquiries are answered at sales@desertrich.com.'],
+  ['Can I buy it now?', 'You can start now. Make an offer or email the agent. Transfer happens after terms are agreed — not from a button that pretends to charge a card.'],
+  ['Is the emblem included?', 'Yes. The steel-and-cobalt pipe-lining mark on this page is included as a starting identity. You can keep it or commission a new one after transfer.'],
+  ['Do you guarantee rankings, traffic, or revenue?', 'No. You are buying a domain name and a mark, not a business, a backlink profile, or a promise of search position. See the disclaimer in the footer.'],
+  ['Who answers?', 'Inquiries go to sales@desertrich.com. One desk. No call center script.'],
+];
+
+const nav = [
+  ['#name', 'The name'],
+  ['#fit', 'Fit'],
+  ['#mark', 'The mark'],
+  ['#transfer', 'Transfer'],
+  ['#questions', 'Questions'],
+];
 ---
 
-<Layout title="Pipelined Repair" description="">
-  <main class="relative w-full overflow-hidden bg-[var(--color-void)]">
-    <!-- Full-bleed mystic hero -->
-    <section class="relative min-h-dvh w-full overflow-hidden" aria-label="Hero">
-      <div class="absolute inset-0 overflow-hidden">
-        <img
-          src={IMAGE}
-          alt=""
-          width="1920"
-          height="1080"
-          decoding="async"
-          fetchpriority="high"
-          class="mystic-image absolute inset-0 h-full w-full object-cover object-center drift-layer select-none"
-          style="will-change: transform, opacity, filter;"
-        />
+<Layout>
+  <a href="#content" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-primary focus:px-4 focus:py-3 focus:text-primary-fg">Skip to content</a>
+
+  <header class="sticky top-0 z-30 border-b border-line/80 bg-header backdrop-blur-md">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+      <a href="#top" class="min-w-0 leading-none">
+        <span class="block font-display text-xl font-semibold tracking-wide text-fg uppercase">Pipelined</span>
+        <span class="block text-xs font-medium tracking-wide text-muted">repair.com</span>
+      </a>
+      <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+        {nav.map(([href, label]) => (
+          <a href={href} class="text-sm font-medium text-muted hover:text-fg">{label}</a>
+        ))}
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="theme" type="button" class="grid h-12 w-12 place-items-center rounded-full border border-line" aria-label="Toggle color theme">
+          <span id="theme-icon" aria-hidden="true">◐</span>
+        </button>
+        <button type="button" data-offer class="hidden h-12 items-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-fg sm:inline-flex">Make offer</button>
+        <button id="menu-btn" type="button" class="grid h-12 w-12 place-items-center rounded-full border border-line lg:hidden" aria-expanded="false" aria-label="Open menu">☰</button>
       </div>
+    </div>
+    <nav id="menu" class="hidden border-t border-line px-4 py-3 lg:hidden" aria-label="Mobile">
+      {nav.map(([href, label]) => (
+        <a href={href} data-nav class="flex h-12 items-center text-base font-medium">{label}</a>
+      ))}
+      <button type="button" data-offer class="mt-1 flex h-12 w-full items-center justify-center rounded-full bg-primary font-semibold text-primary-fg">Make offer</button>
+    </nav>
+  </header>
 
-      <!-- Layered atmospheric overlays -->
-      <div
-        class="pointer-events-none absolute inset-0 fog-layer"
-        style="background: radial-gradient(ellipse 80% 70% at 50% 40%, transparent 0%, rgba(5,5,8,0.55) 55%, rgba(5,5,8,0.92) 100%);"
-        aria-hidden="true"
-      ></div>
-
-      <div
-        class="pointer-events-none absolute inset-0"
-        style="background: linear-gradient(to bottom, rgba(5,5,8,0.65) 0%, transparent 28%, transparent 62%, rgba(5,5,8,0.85) 100%);"
-        aria-hidden="true"
-      ></div>
-
-      <div
-        class="pointer-events-none absolute inset-0 opacity-40"
-        style="background: radial-gradient(circle at 30% 20%, rgba(90,70,50,0.18), transparent 45%), radial-gradient(circle at 75% 70%, rgba(40,30,50,0.22), transparent 40%);"
-        aria-hidden="true"
-      ></div>
-
-      <!-- Noise grain -->
-      <div class="noise absolute inset-0 opacity-[0.07]" aria-hidden="true"></div>
-
-      <!-- Subtle vignette edge -->
-      <div
-        class="pointer-events-none absolute inset-0 shadow-[inset_0_0_120px_rgba(0,0,0,0.75)]"
-        aria-hidden="true"
-      ></div>
+  <main id="content">
+    <section id="top" class="blueprint border-b border-line">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
+        <div>
+          <p class="font-display text-sm font-semibold tracking-widest text-primary uppercase">Premium domain for sale</p>
+          <h1 class="mt-3 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
+            <span class="sr-only">{DOMAIN}</span>
+            <span aria-hidden="true" class="block">pipelined</span>
+            <span aria-hidden="true" class="block">repair.com</span>
+          </h1>
+          <p class="mt-5 max-w-xl text-lg text-muted">
+            The exact-match .com for professional pipe lining. A working name for CIPP, trenchless rehabilitation, and municipal sewer brands — two ordinary words, one category.
+          </p>
+          <dl class="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-4">
+            {facts.map(([k, v]) => (
+              <div class="bg-surface px-3 py-3">
+                <dt class="text-xs tracking-wide text-faint uppercase">{v}</dt>
+                <dd class="font-display text-2xl font-semibold tracking-wide text-steel uppercase">{k}</dd>
+              </div>
+            ))}
+          </dl>
+          <div class="mt-6 rounded-card border border-line bg-surface p-4 sm:p-5">
+            <p class="text-xs font-semibold tracking-widest text-faint uppercase">Asking price</p>
+            <p class="mt-1 font-display text-4xl font-semibold tracking-wide uppercase">Private offer</p>
+            <p class="mt-1 text-sm text-muted">Not listed. One buyer. No countdown, no fake viewers, no checkout that charges a card.</p>
+            <div class="mt-4 flex flex-col gap-2 sm:flex-row">
+              <button type="button" data-offer class="inline-flex h-12 items-center justify-center rounded-full bg-primary px-5 text-base font-semibold text-primary-fg">Make offer</button>
+              <a href={`mailto:${EMAIL}?subject=${encodeURIComponent('Inquiry — ' + DOMAIN)}`} class="inline-flex h-12 items-center justify-center rounded-full border border-line px-5 text-base font-semibold">Contact agent</a>
+            </div>
+          </div>
+        </div>
+        <figure class="overflow-hidden rounded-card border border-line bg-surface shadow-frame">
+          <img src={IMAGE} alt="Steel and cobalt Pipelined Repair emblem on a workshop wall, reading professional pipe lining solutions" width="1600" height="900" fetchpriority="high" decoding="async" class="aspect-[16/10] w-full object-cover" />
+          <figcaption class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-line px-4 py-3 text-sm text-muted">
+            <span>Included mark · professional pipe lining</span>
+            <span class="font-display tracking-widest uppercase">Single asset</span>
+          </figcaption>
+        </figure>
+      </div>
     </section>
 
-    <!-- Inquire CTA in its own container below hero -->
-    <div class="cta-reveal relative z-20 flex justify-center px-6 py-10 sm:py-12">
-      <a
-        href="mailto:sales@desertrich.com"
-        class="group relative inline-flex min-h-11 min-w-[44px] items-center gap-2 rounded-full border border-white/10 bg-black/30 px-7 py-3 text-xs font-medium tracking-[0.28em] uppercase text-[var(--color-whisper)] backdrop-blur-md transition-all duration-700 hover:border-white/25 hover:bg-black/45 hover:text-[var(--color-ghost)] hover:shadow-[0_0_40px_rgba(180,160,140,0.15)] focus:outline-none focus-visible:ring-1 focus-visible:ring-white/30"
-        aria-label="Contact sales"
-      >
-        <span class="relative z-10">Inquire</span>
-        <span
-          class="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-          aria-hidden="true"
-        ></span>
-      </a>
-    </div>
+    <section id="name" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <div>
+          <p class="font-display text-sm font-semibold tracking-widest text-primary uppercase">The asset</p>
+          <h2 class="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">A category name, not a coined one.</h2>
+        </div>
+        <div class="grid gap-8">
+          <p class="text-lg text-muted">
+            People already say “pipe lining” when a line fails. This domain is that phrase, spelled cleanly, on the TLD buyers type by habit. It is the kind of premium domain name an operator can put on a hard hat without a pronunciation guide.
+          </p>
+          <ul class="grid gap-4 sm:grid-cols-3">
+            {pillars.map(([title, copy]) => (
+              <li class="rounded-card border border-line bg-surface p-4">
+                <h3 class="font-semibold">{title}</h3>
+                <p class="mt-2 text-sm text-muted">{copy}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <!-- Footer disclaimer -->
-    <footer class="footer-reveal relative z-30 px-5 pb-5 pt-2 sm:px-8 sm:pb-6">
-      <p
-        class="mx-auto max-w-2xl text-center text-xs leading-relaxed tracking-wide text-white/35 sm:text-[13px]"
-      >
-        This website is for demonstration and informational purposes only. It does not constitute an
-        offer of services, a commitment to deploy, or a guarantee of outcomes. All statistics,
-        projections, and references to specific technologies are based on publicly available
-        information as of the date shown and are subject to change.
-      </p>
-    </footer>
+    <section id="fit" class="border-y border-line bg-surface">
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <p class="font-display text-sm font-semibold tracking-widest text-primary uppercase">Fit</p>
+        <h2 class="mt-2 max-w-xl text-4xl font-extrabold tracking-tight sm:text-5xl">Who should own pipelinedrepair.com</h2>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+          {fit.map(([title, copy]) => (
+            <article class="rounded-card border border-line bg-bg p-5">
+              <h3 class="text-xl font-bold">{title}</h3>
+              <p class="mt-2 text-muted">{copy}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="mark" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <div class="grid items-center gap-8 lg:grid-cols-2">
+        <div>
+          <p class="font-display text-sm font-semibold tracking-widest text-primary uppercase">Included</p>
+          <h2 class="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">The mark travels with the name.</h2>
+          <p class="mt-4 text-lg text-muted">Steel ring, cobalt flow, workshop wall. It already reads as a lining company, not a parked ads page. Use it on day one, or treat it as a placeholder while a designer starts over.</p>
+          <ul class="mt-6 space-y-3">
+            <li>Circular badge, built for trucks, bids, and hard hats.</li>
+            <li>States the category: professional pipe lining solutions.</li>
+            <li>Delivered with the domain — not licensed back to the seller.</li>
+          </ul>
+        </div>
+        <img src={IMAGE} alt="" width="1600" height="900" loading="lazy" decoding="async" class="aspect-[16/10] w-full rounded-card border border-line object-cover" />
+      </div>
+    </section>
+
+    <section id="transfer" class="border-y border-line bg-surface-2">
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <p class="font-display text-sm font-semibold tracking-widest text-primary uppercase">Transfer</p>
+        <h2 class="mt-2 max-w-2xl text-4xl font-extrabold tracking-tight sm:text-5xl">Three steps. No theater.</h2>
+        <ol class="mt-8 grid gap-4 lg:grid-cols-3">
+          {steps.map(([n, title, copy]) => (
+            <li class="rounded-card border border-line bg-surface p-5">
+              <p class="font-display text-3xl font-semibold tracking-wide text-primary">{n}</p>
+              <h3 class="mt-3 text-xl font-bold">{title}</h3>
+              <p class="mt-2 text-muted">{copy}</p>
+            </li>
+          ))}
+        </ol>
+        <div class="mt-8 flex flex-col gap-3 rounded-card border border-line bg-bg p-5 sm:flex-row sm:items-center sm:justify-between">
+          <p class="max-w-xl text-muted">Trust is the process: a written offer, optional third-party escrow, and a registrar transfer you control.</p>
+          <button type="button" data-offer class="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-primary px-5 font-semibold text-primary-fg">Start with an offer</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="questions" class="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
+      <p class="font-display text-sm font-semibold tracking-widest text-primary uppercase">Questions</p>
+      <h2 class="mt-2 text-4xl font-extrabold tracking-tight">Before you write.</h2>
+      <div class="mt-6 divide-y divide-line border-y border-line">
+        {faq.map(([q, a]) => (
+          <details class="group py-1">
+            <summary class="flex min-h-12 items-center justify-between gap-4 py-3 text-base font-semibold">
+              {q}
+              <span class="font-display text-xl text-muted group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="pb-4 text-muted">{a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="border-t border-line bg-surface">
+      <div class="mx-auto flex max-w-6xl flex-col items-start gap-6 px-4 py-16 sm:px-6 sm:py-20">
+        <p class="font-display text-sm font-semibold tracking-widest text-primary uppercase">Available</p>
+        <h2 class="max-w-3xl text-4xl font-extrabold tracking-tight sm:text-6xl">{DOMAIN}</h2>
+        <p class="max-w-xl text-lg text-muted">Buy this .com directly. Make an offer, or contact the agent if you want the brief before you name a number.</p>
+        <div class="flex flex-col gap-2 sm:flex-row">
+          <button type="button" data-offer class="inline-flex h-12 items-center justify-center rounded-full bg-primary px-6 font-semibold text-primary-fg">Make offer</button>
+          <a href={`mailto:${EMAIL}?subject=${encodeURIComponent('Agent — ' + DOMAIN)}`} class="inline-flex h-12 items-center justify-center rounded-full border border-line px-6 font-semibold">Contact agent</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="border-t border-line px-4 py-8 sm:px-6">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <p class="font-display text-lg tracking-widest uppercase">Pipelined Repair</p>
+        <a href={`mailto:${EMAIL}`} class="text-sm font-medium text-primary">{EMAIL}</a>
+      </div>
+      <p class="max-w-3xl text-xs leading-relaxed text-faint">
+        This website is for demonstration and informational purposes only. It does not constitute an offer of services, a commitment to deploy, or a guarantee of outcomes. All statistics, projections, and references to specific technologies are based on publicly available information as of the date shown and are subject to change.
+      </p>
+      <p class="text-xs text-faint">© {new Date().getFullYear()} {DOMAIN}. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="exit" class="fixed inset-x-0 bottom-0 z-40 hidden p-3 sm:p-6">
+    <form id="exit-form" class="mx-auto flex max-w-3xl flex-col gap-4 rounded-card border border-line bg-surface p-4 shadow-2xl sm:flex-row sm:items-center sm:p-5">
+      <div class="min-w-0 flex-1">
+        <p class="font-display text-sm font-semibold tracking-widest text-primary uppercase">Still looking</p>
+        <p class="mt-1 text-base font-semibold">Request the one-page brief for {DOMAIN}.</p>
+      </div>
+      <input id="exit-email" type="email" required placeholder="Work email" aria-label="Work email" class="h-12 w-full rounded-full border border-line bg-bg px-4 sm:w-52" />
+      <button type="submit" class="inline-flex h-12 items-center justify-center rounded-full bg-primary px-4 text-sm font-semibold text-primary-fg">Email the brief</button>
+      <button type="button" id="exit-dismiss" class="h-12 px-2 text-sm text-muted">Not now</button>
+    </form>
+  </div>
+
+  <dialog id="offer" aria-labelledby="offer-title">
+    <form id="offer-form" method="dialog" class="grid gap-3 p-5 sm:p-7">
+      <div class="mb-2 flex items-start justify-between gap-4">
+        <div>
+          <p class="font-display text-sm font-semibold tracking-widest text-primary uppercase">Written offer</p>
+          <h2 id="offer-title" class="mt-1 text-2xl font-extrabold tracking-tight">{DOMAIN}</h2>
+        </div>
+        <button type="button" id="offer-close" class="grid h-12 w-12 place-items-center rounded-full border border-line" aria-label="Close">✕</button>
+      </div>
+      <label class="grid gap-1 text-sm font-medium text-muted">Name<input name="name" required minlength="2" autocomplete="name" class="h-12 rounded-lg border border-line bg-bg px-3 text-base text-fg" /></label>
+      <label class="grid gap-1 text-sm font-medium text-muted">Email<input name="email" type="email" required autocomplete="email" class="h-12 rounded-lg border border-line bg-bg px-3 text-base text-fg" /></label>
+      <div class="grid gap-3 sm:grid-cols-2">
+        <label class="grid gap-1 text-sm font-medium text-muted">Company<input name="company" class="h-12 rounded-lg border border-line bg-bg px-3 text-base text-fg" /></label>
+        <label class="grid gap-1 text-sm font-medium text-muted">Phone<input name="phone" autocomplete="tel" class="h-12 rounded-lg border border-line bg-bg px-3 text-base text-fg" /></label>
+      </div>
+      <label class="grid gap-1 text-sm font-medium text-muted">Offer in USD (optional)<input name="offer" inputmode="decimal" class="h-12 rounded-lg border border-line bg-bg px-3 text-base text-fg" /></label>
+      <label class="grid gap-1 text-sm font-medium text-muted">Intended use
+        <select name="use" class="h-12 rounded-lg border border-line bg-bg px-3 text-base text-fg">
+          <option>Operating brand</option>
+          <option>Client acquisition site</option>
+          <option>Hold as an investment domain</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label class="grid gap-1 text-sm font-medium text-muted">Note<textarea name="message" rows="3" class="rounded-lg border border-line bg-bg px-3 py-3 text-base text-fg"></textarea></label>
+      <p id="offer-error" class="hidden text-sm font-medium text-primary"></p>
+      <button type="submit" class="inline-flex h-12 items-center justify-center rounded-full bg-primary px-5 font-semibold text-primary-fg">Send offer by email</button>
+      <p class="text-sm text-faint">Opens a message to {EMAIL}. No checkout and no card.</p>
+    </form>
+  </dialog>
+
+  <script>
+    const EMAIL = 'sales@desertrich.com';
+    const DOMAIN = 'pipelinedrepair.com';
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('theme');
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    const dialog = document.getElementById('offer') as HTMLDialogElement | null;
+    const form = document.getElementById('offer-form') as HTMLFormElement | null;
+    const error = document.getElementById('offer-error');
+    const exit = document.getElementById('exit');
+    const exitForm = document.getElementById('exit-form') as HTMLFormElement | null;
+
+    function mailto(fields: Record<string, string>, subject: string) {
+      const lines = [
+        `Domain: ${DOMAIN}`,
+        fields.name ? `Name: ${fields.name}` : '',
+        fields.email ? `Email: ${fields.email}` : '',
+        fields.company ? `Company: ${fields.company}` : '',
+        fields.phone ? `Phone: ${fields.phone}` : '',
+        fields.offer ? `Offer (USD): ${fields.offer}` : '',
+        fields.use ? `Intended use: ${fields.use}` : '',
+        '',
+        fields.message || 'I would like to discuss acquiring this domain.',
+      ].filter(Boolean);
+      return `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+    }
+
+    themeBtn?.addEventListener('click', () => {
+      const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+      root.dataset.theme = next;
+      localStorage.setItem('pr-theme', next);
+    });
+
+    menuBtn?.addEventListener('click', () => {
+      const open = menu?.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    document.querySelectorAll('[data-nav]').forEach((link) => {
+      link.addEventListener('click', () => menu?.classList.add('hidden'));
+    });
+
+    document.querySelectorAll('[data-offer]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        menu?.classList.add('hidden');
+        dialog?.showModal();
+      });
+    });
+    document.getElementById('offer-close')?.addEventListener('click', () => dialog?.close());
+
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+      if (!data.name || data.name.trim().length < 2) {
+        if (error) {
+          error.textContent = 'Add your name so the desk knows who is writing.';
+          error.classList.remove('hidden');
+        }
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email || '')) {
+        if (error) {
+          error.textContent = 'Use a real email so a reply can reach you.';
+          error.classList.remove('hidden');
+        }
+        return;
+      }
+      window.location.href = mailto(data, `Offer — ${DOMAIN}`);
+      dialog?.close();
+    });
+
+    if (exit && localStorage.getItem('pr-exit') !== '1') {
+      let armed = false;
+      window.setTimeout(() => { armed = true; }, 12000);
+      document.addEventListener('mouseout', (event) => {
+        if (!armed || event.clientY > 24) return;
+        exit.classList.remove('hidden');
+        armed = false;
+      });
+    }
+    document.getElementById('exit-dismiss')?.addEventListener('click', () => {
+      localStorage.setItem('pr-exit', '1');
+      exit?.classList.add('hidden');
+    });
+    exitForm?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const email = (document.getElementById('exit-email') as HTMLInputElement).value;
+      window.location.href = mailto({ email, message: 'Please send the acquisition brief.' }, `Acquisition brief — ${DOMAIN}`);
+      localStorage.setItem('pr-exit', '1');
+      exit?.classList.add('hidden');
+    });
+  </script>
 </Layout>

@@ -9,15 +9,50 @@ interface Props {
 }
 
 const {
-  title = 'Pipelined Repair',
-  description = '',
+  title = 'pipelinedrepair.com | Premium Domain for Sale',
+  description = 'Acquire pipelinedrepair.com — the exact-match .com for professional pipe lining. Private offer, escrow-ready transfer. Inquire at sales@desertrich.com.',
   image = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/b9c8fe8e-bbb8-40b7-3ddf-6fb7ca8a9800/public',
   noindex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const siteName = 'pipelinedrepair.com';
-const ogImage = image;
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'Pipelined Repair',
+      url: 'https://pipelinedrepair.com',
+      email: 'sales@desertrich.com',
+      logo: image,
+    },
+    {
+      '@type': 'WebSite',
+      name: 'pipelinedrepair.com',
+      url: 'https://pipelinedrepair.com',
+      description,
+      publisher: { '@type': 'Organization', name: 'Pipelined Repair', email: 'sales@desertrich.com' },
+    },
+    {
+      '@type': 'Product',
+      name: 'pipelinedrepair.com',
+      description:
+        'Premium exact-match .com domain for professional pipe lining, CIPP, and trenchless rehabilitation brands.',
+      category: 'Premium domain name',
+      brand: { '@type': 'Brand', name: 'Pipelined Repair' },
+      image,
+      url: 'https://pipelinedrepair.com/',
+      offers: {
+        '@type': 'Offer',
+        availability: 'https://schema.org/LimitedAvailability',
+        priceCurrency: 'USD',
+        url: 'https://pipelinedrepair.com/',
+        description: 'Private offer. Price on request via sales@desertrich.com.',
+        seller: { '@type': 'Organization', name: 'Desert Rich', email: 'sales@desertrich.com' },
+      },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -26,59 +61,48 @@ const ogImage = image;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="generator" content={Astro.generator} />
-
-    <!-- Primary -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="google-site-verification" content="zh-mbcQdQPnD1_1URBypdfhiJvCiee8Y1spUDJBIkvw" />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalURL} />
-
-    <!-- Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
-
-    <!-- Theme -->
-    <meta name="theme-color" content="#050505" />
-    <meta name="color-scheme" content="dark" />
-
-    <!-- Open Graph -->
+    <meta name="theme-color" content="#101418" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:site_name" content={siteName} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Pipelined Repair" />
+    <meta property="og:site_name" content="pipelinedrepair.com" />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content="Pipelined Repair steel and cobalt pipe-lining emblem" />
     <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content="Pipelined Repair" />
-
-    <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": siteName,
-      "url": "https://pipelinedrepair.com",
-      "description": description || "Pipelined Repair",
-      "image": ogImage,
-      "publisher": {
-        "@type": "Organization",
-        "name": "Pipelined Repair",
-        "url": "https://pipelinedrepair.com",
-        "email": "sales@desertrich.com"
-      }
-    })} />
+    <meta name="twitter:image" content={image} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('pr-theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          document.documentElement.dataset.theme = t;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
   </head>
-  <body class="bg-[var(--color-void)] text-[var(--color-ghost)]">
+  <body class="bg-bg text-fg antialiased">
     <slot />
   </body>
 </html>

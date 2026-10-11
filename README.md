@@ -1,16 +1,16 @@
 # pipelinedrepair.com
 
-Mysterious, image-driven static site built with **Astro 7** + **Tailwind CSS 4**, deployed as pure **Cloudflare Workers Static Assets** (no adapter, assets-only).
+Premium single-name acquisition site for **pipelinedrepair.com**. Astro 7 + Tailwind CSS 4, deployed as **Cloudflare Workers Static Assets** (free plan, no adapter).
 
 ## Stack
 
 - Astro 7 (static output)
 - Tailwind CSS 4 via `@tailwindcss/vite`
 - `@astrojs/sitemap`
-- Content Collections (ready)
-- Cloudflare Images CDN for the primary visual
-- Full Open Graph + Twitter cards + JSON-LD structured data
-- `robots.txt` + auto-generated sitemap
+- Existing Cloudflare Images emblem (reused, not replaced)
+- Open Graph, Twitter card, JSON-LD (Organization, WebSite, Product/Offer)
+- `robots.txt`, generated sitemap, canonical URL
+- `public/_headers` for basic security headers
 
 ## Local development
 
@@ -19,35 +19,26 @@ npm install
 npm run dev
 ```
 
-## Build & Deploy (Cloudflare Workers Static Assets)
+## Build & deploy
 
 ```bash
 npm run build
-# outputs pure static files to ./dist
-
-# Deploy (requires wrangler logged in)
 npm run deploy
-# or
-npx wrangler deploy
 ```
 
-`wrangler.toml` is configured for assets-only:
+`wrangler.toml` stays assets-only:
 
 ```toml
 [assets]
 directory = "./dist"
 ```
 
-No Worker script or `@astrojs/cloudflare` adapter is required.
+Production: https://pipelinedrepair.com
 
-## Domain
+Inquiries: sales@desertrich.com
 
-Production target: **https://pipelinedrepair.com**
+Price is a private offer. Do not publish a number on the page.
 
-CTA routes to: `sales@desertrich.com`
+## Changelog
 
-## Notes
-
-- Fully static, edge-cached via Cloudflare.
-- Mobile-first, full-viewport image with atmospheric fades, vignette, grain, and subtle drift.
-- No body copy — visual + single acquisition CTA + required disclaimer footer.
+See [CHANGELOG.md](./CHANGELOG.md).
